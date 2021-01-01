@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Vasigames</title>
+    <link rel="icon" type="image/x-icon" href="assest/TemplateData/logo.png">
+    <link rel="stylesheet" href="assest/TemplateData/style.css">
+     <link rel="stylesheet" type="text/css" href="assest/css/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="assest/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assest/css/jquery-ui.css">
+    <script type="text/javascript" src="assest/js/jquery.js"></script>
+    <script src="assest/TemplateData/UnityProgress.js"></script>
+    <script type="text/javascript" src="assest/js/bootstrap.min.js"></script>
+    <script src="assest/js/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("card", "Letters/Build/Letters.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body class="bg-dark">
+      <div class="webgl-content">
+      <div class="container-fluid">
+       
+      <div class="card text-center text-white bg-info mt-2">
+        <div class="card-header ">
+           <div><a class="text-white btn btn-outline-dark" href="index.html">Home Page</a><a class="text-white btn btn-outline-danger ml-4" href="">Restart</a></div>
+        </div>
+        <div class="card-body" id="card"></div>
+        
+        <div class="card-footer ">
+          <div class="footer" id="screen">
+            <div class="webgl-logo text-white">VasiGames</div>
+          <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+          <div class="title text-white">Letters</div>
+          </div>
+          
+        </div>
+      </div>  
+     </div>
+    </div>
+ 
+    
+   <script >
+      const innerHeight = window.innerHeight;
+       const innerWidth = window.innerWidth;
+       const unityContainerobj = document.getElementById("card");
+       const unityFullScreenobj=document.getElementById("screen");
+       if(innerHeight <= 600 || innerWidth <= 900){
+         unityContainerobj.style.height =(innerHeight-100).toString().concat("px");
+         unityFullScreenobj.style.display="none";
+       }
+      
+   </script>
+  </body>
+</html>
